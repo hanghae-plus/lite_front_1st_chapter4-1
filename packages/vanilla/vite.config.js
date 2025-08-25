@@ -8,6 +8,20 @@ export default mergeConfig(
     base,
     build: {
       outDir: "../../dist/vanilla",
+      rollupOptions: {
+        input: {
+          main: "./index.html",
+          server: "./src/main-server.js",
+        },
+        output: {
+          entryFileNames: (chunkInfo) => {
+            return chunkInfo.name === "server" ? "../vanilla-ssr/[name].js" : "assets/[name]-[hash].js";
+          },
+        },
+      },
+    },
+    ssr: {
+      noExternal: ["express"],
     },
   }),
   defineTestConfig({
