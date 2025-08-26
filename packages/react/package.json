@@ -8,11 +8,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp ../../dist/react/index.html ../../dist/react/404.html",
+    "dev:ssr": "node server.js",
+    "build:csr": "vite build && cp ../../dist/react/index.html ../../dist/react/404.html",
+    "build:ssr": "BUILD_SSR=true vite build --ssr",
+    "build": "npm run build:csr && npm run build:ssr",
+    "generate": "npm run build:all && node static-site-generate.js",
+    "preview": "vite preview",
+    "preview:ssr": "NODE_ENV=production node server.js",
+    "preview:ssr-with-build": "pnpm run build && pnpm run preview:ssr",
     "tsc": "tsc --noEmit",
     "lint:fix": "eslint --fix",
-    "prettier:write": "prettier --write ./src",
-    "preview": "vite preview"
+    "prettier:write": "prettier --write ./src"
   },
   "dependencies": {
     "react": "latest",
@@ -26,7 +32,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/use-sync-external-store": "latest",
-    "@vitejs/plugin-react-oxc": "latest",
+    "@vitejs/plugin-react": "latest",
     "@types/node": "^24.0.13",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -36,6 +42,9 @@
     "msw": "^2.10.2",
     "prettier": "^3.4.2",
     "typescript": "^5.8.3",
-    "vite": "npm:rolldown-vite@latest"
+    "vite": "npm:rolldown-vite@latest",
+    "express": "^5.1.0",
+    "compression": "^1.7.5",
+    "sirv": "^3.0.0"
   }
 }
