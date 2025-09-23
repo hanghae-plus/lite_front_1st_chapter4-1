@@ -2,7 +2,7 @@ import express from "express";
 
 const prod = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || (prod ? "/front_6th_chapter4-1/vanilla/" : "/");
+const base = process.env.BASE || (prod ? "/front_lite_chapter4-1/vanilla/" : "/");
 
 const app = express();
 

@@ -4,7 +4,7 @@ import { createElement } from "react";
 
 const prod = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5174;
-const base = process.env.BASE || (prod ? "/front_6th_chapter4-1/react/" : "/");
+const base = process.env.BASE || (prod ? "/front_lite_chapter4-1/react/" : "/");
 
 const app = express();
 
