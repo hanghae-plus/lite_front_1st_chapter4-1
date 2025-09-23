@@ -4,7 +4,7 @@ import express from "express";
 // Constants
 const prod = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5174; // React용 포트 (vanilla과 구분)
-const base = process.env.BASE || (prod ? "/front_6th_chapter4-1/react/" : "/");
+const base = process.env.BASE || (prod ? "/front_lite_chapter4-1/react/" : "/");
 
 // Cached production assets
 const templateHtml = prod ? await fs.readFile("./dist/react/index.html", "utf-8") : "";

@@ -58,7 +58,7 @@ async function generateStaticSite() {
 
 async function getPages() {
   const pages = [];
-  const baseUrl = "/front_6th_chapter4-1/react/";
+  const baseUrl = "/front_lite_chapter4-1/react/";
 
   // 홈페이지
   pages.push({ url: baseUrl, filePath: path.join(DIST_DIR, "index.html") });

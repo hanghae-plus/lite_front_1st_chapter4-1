@@ -4,7 +4,7 @@ import express from "express";
 // Constants
 const prod = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || (prod ? "/front_6th_chapter4-1/vanilla/" : "/");
+const base = process.env.BASE || (prod ? "/front_lite_chapter4-1/vanilla/" : "/");
 
 // Cached production assets
 const templateHtml = prod ? await fs.readFile("./dist/vanilla/index.html", "utf-8") : "";
